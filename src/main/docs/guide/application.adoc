@@ -1,0 +1,7 @@
+`Application.java` is used when running the application via Gradle or via deployment. You can also run the main class directly within your IDE if it is configured correctly.
+
+[source,java]
+.src/main/java/example/micronaut/Application.java
+----
+include::{sourceDir}/src/main/java/example/micronaut/Application.java[]
+----

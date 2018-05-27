@@ -1,0 +1,13 @@
+In order to create a microservice that responds to "Hello World" you first need a controller.
+
+Create a Controller:
+
+[source,java]
+.src/main/java/example/micronaut/HelloController.java
+----
+include::{sourceDir}/src/main/java/example/micronaut/HelloController.java[]
+----
+
+<1> The class is defined as a controller with the http://docs.micronaut.io/snapshot/api/io/micronaut/http/annotation/Controller.html[@Controller] annotation mapped to the path /hello
+<2> The http://docs.micronaut.io/snapshot/api/io/micronaut/http/annotation/Get.html[@Get] annotation is used to map the index method to all requests that use an HTTP GET
+<3> A String "Hello World" is returned as the result

@@ -1,0 +1,12 @@
+gettingStarted: 
+  title: Getting Started
+  requirements: What you will need
+  solution: Solution
+writingTheApp: Writing the App
+application: Application
+controller: Controller
+tests: Test
+testingTheApp:
+  title: Testing the Application
+runningTheApp:
+  title: Running the Application

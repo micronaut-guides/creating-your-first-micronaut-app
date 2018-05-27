@@ -1,0 +1,11 @@
+Create a Junit test which verifies that when you do a GET request to `/hello` you get `Hello World` as a response:
+
+[source,java]
+.src/test/java/example/micronaut/HelloControllerTest.java
+----
+include::{sourceDir}/src/test/java/example/micronaut/HelloControllerTest.java[]
+----
+
+<1> To run the application from a unit test you can use the http://docs.micronaut.io/snapshot/api/io/micronaut/runtime/server/EmbeddedServer.html[EmbeddedServer] interface
+<2> Register a `RxClient` bean in the application context and point it to the embedded server URL. The `EmbeddedServer` interface provides the URL of the server under test which runs on a random port.
+<3> Creating HTTP Requests is easy thanks to Micronaut's fluid API.
