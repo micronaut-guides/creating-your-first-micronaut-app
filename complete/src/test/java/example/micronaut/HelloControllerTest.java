@@ -25,10 +25,10 @@ public class HelloControllerTest {
 
     @AfterClass
     public static void stopServer() {
-        if(server != null) {
+        if (server != null) {
             server.stop();
         }
-        if(client != null) {
+        if (client != null) {
             client.stop();
         }
     }
@@ -43,5 +43,4 @@ public class HelloControllerTest {
                 "Hello World"
         );
     }
-
 }
