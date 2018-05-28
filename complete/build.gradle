@@ -49,6 +49,6 @@ shadowJar {
     mergeServiceFiles()
 }
 
-mainClassName = "example.Application"
+mainClassName = "example.micronaut.Application"
 compileJava.options.compilerArgs += '-parameters'
 compileTestJava.options.compilerArgs += '-parameters'
