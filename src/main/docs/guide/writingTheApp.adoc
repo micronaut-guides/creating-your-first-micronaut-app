@@ -1,1 +1,3 @@
 include::{commondir}/common-create-app-java.adoc[]
+
+include::{commondir}/common-annotationprocessors.adoc[]
