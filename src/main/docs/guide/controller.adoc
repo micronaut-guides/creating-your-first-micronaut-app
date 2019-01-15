@@ -1,4 +1,4 @@
-In order to create a microservice that responds to "Hello World" you first need a controller.
+In order to create a microservice that responds with "Hello World" you first need a controller.
 
 Create a Controller:
 
