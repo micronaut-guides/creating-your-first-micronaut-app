@@ -1,46 +1,29 @@
 package example.micronaut;
 
-import io.micronaut.context.ApplicationContext;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.client.HttpClient;
-import io.micronaut.runtime.server.EmbeddedServer;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import io.micronaut.http.client.annotation.Client;
+import io.micronaut.test.annotation.MicronautTest;
+import org.junit.jupiter.api.Test;
 
+import javax.inject.Inject;
+
+@MicronautTest // <1>
 public class HelloControllerTest {
 
-    private static EmbeddedServer server;
-    private static HttpClient client;
-
-    @BeforeClass
-    public static void setupServer() {
-        server = ApplicationContext.run(EmbeddedServer.class); // <1>
-        client = server
-                .getApplicationContext()
-                .createBean(HttpClient.class, server.getURL());  // <2>
-    }
-
-    @AfterClass
-    public static void stopServer() {
-        if (server != null) {
-            server.stop();
-        }
-        if (client != null) {
-            client.stop();
-        }
-    }
+    @Inject
+    @Client("/")
+    HttpClient client; // <2>
 
     @Test
     public void testHello() throws Exception {
         HttpRequest request = HttpRequest.GET("/hello"); // <3>
         String body = client.toBlocking().retrieve(request);
+
         assertNotNull(body);
-        assertEquals(
-                body,
-                "Hello World"
-        );
+        assertEquals(body, "Hello World");
     }
 }
