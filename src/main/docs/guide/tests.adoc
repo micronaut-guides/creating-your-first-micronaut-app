@@ -6,5 +6,5 @@ Create a Junit test which verifies that when you do a GET request to `/hello` yo
 include::{sourceDir}/src/test/java/example/micronaut/HelloControllerTest.java[]
 ----
 <1> Annotate the class with `@MicronautTest` so Micronaut will initialize the application context and the embedded server.
-<2> Inject the `HttpClient` bean. It is used the execute an HTTP call to the controller.
+<2> Inject the `RxHttpClient` bean. It is used the execute an HTTP call to the controller.
 <3> Creating HTTP Requests is easy thanks to Micronaut's fluid API.
