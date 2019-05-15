@@ -12,15 +12,15 @@ import org.junit.jupiter.api.Test;
 import javax.inject.Inject;
 
 @MicronautTest // <1>
-public class HelloControllerTest {
+class HelloControllerTest {
 
     @Inject
     @Client("/")
     RxHttpClient client; // <2>
 
     @Test
-    public void testHello() throws Exception {
-        HttpRequest request = HttpRequest.GET("/hello"); // <3>
+    void testHello() {
+        HttpRequest<String> request = HttpRequest.GET("/hello"); // <3>
         String body = client.toBlocking().retrieve(request);
 
         assertNotNull(body);
