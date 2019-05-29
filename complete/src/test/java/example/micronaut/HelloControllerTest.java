@@ -19,8 +19,8 @@ public class HelloControllerTest {
     RxHttpClient client; // <2>
 
     @Test
-    public void testHello() throws Exception {
-        HttpRequest request = HttpRequest.GET("/hello"); // <3>
+    public void testHello() {
+        HttpRequest<String> request = HttpRequest.GET("/hello"); // <3>
         String body = client.toBlocking().retrieve(request);
 
         assertNotNull(body);
