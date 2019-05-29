@@ -12,14 +12,14 @@ import org.junit.jupiter.api.Test;
 import javax.inject.Inject;
 
 @MicronautTest // <1>
-class HelloControllerTest {
+public class HelloControllerTest {
 
     @Inject
     @Client("/")
     RxHttpClient client; // <2>
 
     @Test
-    void testHello() {
+    public void testHello() {
         HttpRequest<String> request = HttpRequest.GET("/hello"); // <3>
         String body = client.toBlocking().retrieve(request);
 
