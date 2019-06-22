@@ -24,6 +24,6 @@ public class HelloControllerTest {
         String body = client.toBlocking().retrieve(request);
 
         assertNotNull(body);
-        assertEquals(body, "Hello World");
+        assertEquals("Hello World", body);
     }
 }
