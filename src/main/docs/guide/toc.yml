@@ -11,3 +11,5 @@ testingTheApp:
 runningTheApp:
   title: Running the Application
 nextSteps: Next steps
+help:
+  title: Help with Micronaut
