@@ -1,4 +1,10 @@
-FROM java:openjdk-8u111-alpine
-RUN apk --no-cache add curl
-COPY build/libs/*-all.jar foo.jar
-CMD java ${JAVA_OPTS} -jar foo.jar
+FROM oracle/graalvm-ce:19.3.0-java8 as graalvm
+COPY . /home/app/micronautguide
+WORKDIR /home/app/micronautguide
+RUN gu install native-image
+RUN native-image --no-server -cp build/libs/complete-*-all.jar
+
+FROM frolvlad/alpine-glibc
+EXPOSE 8080
+COPY --from=graalvm /home/app/micronautguide /app/micronautguide
+ENTRYPOINT ["/app/micronautguide","-Xmx68m"]

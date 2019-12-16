@@ -1,0 +1,11 @@
+include::{commondir}/common-graal-install.adoc[]
+
+include::{commondir}/common-graal-nativeimage.adoc[]
+
+You can execute the endpoint exposed by the native image:
+
+[source, bash]
+----
+$ curl localhost:8080/hello
+Hello World
+----
