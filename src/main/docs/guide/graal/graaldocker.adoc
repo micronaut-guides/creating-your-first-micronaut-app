@@ -1,1 +1,5 @@
 include::{commondir}/common-graal-docker.adoc[]
+
+### Preventing java.lang.OutOfMemoryError errors
+
+When I tried to compile a `native-image` for `GraalVM` using a `Dockerfile`, I realised it took a long time to process, until it finally blew up with a `java.lang.OutOfMemoryError`. From what I understand, it is likely the case that the Docker engine doesn't have enough *memory* as resource to use in order to complete this compilation. By default, it comes with *2GB*; which, reading through stackoverflow, is not enough. Setting it from *9GB* to *12GB* solved it for me.
