@@ -9,5 +9,5 @@ RUN native-image --no-server -cp build/libs/complete-*-all.jar
 FROM frolvlad/alpine-glibc
 RUN apk update && apk add libstdc++
 EXPOSE 8080
-COPY --from=graalvm /home/app/complete/complete /app/complete
+COPY --from=graalvm /home/app/complete/micronautguide /app/complete
 ENTRYPOINT ["/app/complete"]
