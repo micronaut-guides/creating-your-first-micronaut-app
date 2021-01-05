@@ -1,1 +1,20 @@
-include::{commondir}/common-graal-docker.adoc[]
+To build a native image with Docker and Gradle run:
+
+[source,bash]
+----
+./gradlew dockerBuild
+----
+
+Or with Maven run:
+
+[source,bash]
+----
+./mvnw package -Dpackaging=docker-native
+----
+
+You can then run the Docker container with:
+
+[source,bash]
+----
+docker run -p 8080:8080 complete
+----
