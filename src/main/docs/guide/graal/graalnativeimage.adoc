@@ -13,7 +13,7 @@ To generate a native image using Maven run:
 
 [source,bash]
 ----
-./mvn package -Dpackaging=native-image
+./mvnw package -Dpackaging=native-image
 ----
 
 The native image will be built to `target/application` and can be run with `./target/application`.
