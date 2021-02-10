@@ -1,0 +1,2 @@
+*/test/**/*.groovy -linguist-detectable
+*.bat -linguist-detectable
